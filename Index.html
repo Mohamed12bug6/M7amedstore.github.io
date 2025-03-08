@@ -1,0 +1,40 @@
+# index
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | M7amed Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>تسجيل الدخول</h1>
+        <p>يرجى تسجيل الدخول بحسابك في ديسكورد</p>
+        <form action="dashboard.html" method="GET" onsubmit="return checkLogin()">
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+    </div>
+
+    <script>
+        function checkLogin() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            // التحقق من صحة البيانات (محاكاة فقط)
+            if (email.includes("@") && password.length >= 6) {
+                return true; // السماح بتسجيل الدخول
+            } else {
+                alert("يرجى التأكد من صحة البريد الإلكتروني وكلمة المرور.");
+                return false; // منع الانتقال للصفحة التالية
+            }
+        }
+    </script>
+</body>
+</html>
